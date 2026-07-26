@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Demian Consultoría | Enfermería Legal y Peritaje Judicial</title>
-    <!-- Fuentes y estilos -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <title>Demian Consultoría | Paola Arriagada Cifuentes</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
             --azul-marino: #1E3A8A;
@@ -13,6 +12,7 @@
             --lila-hover: #7C3AED;
             --fondo-gris: #F8FAFC;
             --texto-oscuro: #1E293B;
+            --blanco: #FFFFFF;
         }
 
         * {
@@ -20,144 +20,294 @@
             margin: 0;
             padding: 0;
             font-family: 'Montserrat', sans-serif;
+            scroll-behavior: smooth;
         }
 
         body {
             background-color: var(--fondo-gris);
             color: var(--texto-oscuro);
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: var(--blanco);
+            position: sticky;
+            top: 0;
+            width: 100%;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            z-index: 1000;
+        }
+
+        nav {
+            max-width: 1000px;
+            margin: 0 auto;
             display: flex;
-            flex-direction: column;
+            justify-content: space-between;
             align-items: center;
-            min-height: 100vh;
-            padding: 20px;
+            padding: 15px 20px;
+        }
+
+        .nav-logo {
+            font-weight: 700;
+            color: var(--azul-marino);
+            text-decoration: none;
+            font-size: 1.1rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--texto-oscuro);
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--lila-principal);
         }
 
         .container {
-            max-width: 600px;
-            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .hero {
             text-align: center;
-            padding: 20px;
+            background: var(--blanco);
+            padding: 40px 20px;
+            border-radius: 16px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+            margin-bottom: 40px;
         }
 
-        /* Logo */
-        .logo-container {
-            margin-bottom: 25px;
-        }
-
-        .logo-container img {
-            max-width: 280px;
+        .logo-img {
+            max-width: 250px;
             width: 100%;
             height: auto;
             border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(30, 58, 138, 0.1);
+            margin-bottom: 20px;
         }
 
-        /* Títulos */
         h1 {
             color: var(--azul-marino);
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             margin-bottom: 8px;
-            font-weight: 700;
         }
 
-        p.subtitle {
+        .subtitle {
             color: #475569;
-            font-size: 0.95rem;
-            margin-bottom: 30px;
-            line-height: 1.4;
+            font-weight: 500;
+            margin-bottom: 25px;
         }
 
-        /* Sección de enlaces / Botones */
-        .links-container {
+        .social-buttons {
             display: flex;
-            flex-direction: column;
-            gap: 16px;
-            width: 100%;
-        }
-
-        .btn-link {
-            display: flex;
-            align-items: center;
             justify-content: center;
-            padding: 16px 20px;
-            background-color: #ffffff;
-            color: var(--azul-marino);
-            border: 2px solid var(--azul-marino);
-            border-radius: 12px;
-            font-weight: 600;
-            font-size: 1rem;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 20px;
+            border-radius: 10px;
             text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
             transition: all 0.3s ease;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
         }
 
-        .btn-link:hover {
-            background-color: var(--azul-marino);
-            color: #ffffff;
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(30, 58, 138, 0.2);
-        }
-
-        /* Botón destacado WhatsApp */
-        .btn-link.highlight {
+        .btn-wsp {
             background-color: var(--lila-principal);
-            color: #ffffff;
-            border: none;
+            color: var(--blanco);
         }
 
-        .btn-link.highlight:hover {
+        .btn-wsp:hover {
             background-color: var(--lila-hover);
+            transform: translateY(-2px);
         }
 
-        /* Footer */
+        .btn-outline {
+            border: 2px solid var(--azul-marino);
+            color: var(--azul-marino);
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            background-color: var(--azul-marino);
+            color: var(--blanco);
+        }
+
+        section {
+            background: var(--blanco);
+            padding: 35px;
+            border-radius: 16px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+        }
+
+        h2 {
+            color: var(--azul-marino);
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid var(--lila-principal);
+            display: inline-block;
+        }
+
+        .grid-services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .card {
+            border: 1px solid #E2E8F0;
+            padding: 20px;
+            border-radius: 12px;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            border-color: var(--lila-principal);
+        }
+
+        .card h3 {
+            color: var(--azul-marino);
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+
         footer {
-            margin-top: 40px;
-            font-size: 0.8rem;
+            text-align: center;
+            padding: 30px 20px;
             color: #94A3B8;
+            font-size: 0.85rem;
+        }
+
+        @media (max-width: 600px) {
+            .nav-links { display: none; }
+            section { padding: 25px 18px; }
         }
     </style>
 </head>
 <body>
 
+    <header>
+        <nav>
+            <a href="#" class="nav-logo">Demian Consultoría</a>
+            <ul class="nav-links">
+                <li><a href="#quien-soy">Quién Soy</a></li>
+                <li><a href="#nosotros">Misión y Visión</a></li>
+                <li><a href="#prestaciones">Prestaciones</a></li>
+                <li><a href="#cursos">Cursos y Talleres</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
     <div class="container">
-        <!-- Logo -->
-        <div class="logo-container">
-            <img src="logo.png.png" alt="Paola Arriagada Cifuentes - Perito Judicial en Enfermería">
+
+        <!-- Cabecera -->
+        <div class="hero">
+            <img src="logo.png.png" alt="Paola Arriagada Cifuentes Logo" class="logo-img">
+            <h1>Paola Arriagada Cifuentes</h1>
+            <p class="subtitle">Perito Judicial en Enfermería | Especialista en Enfermería Legal</p>
+
+            <div class="social-buttons">
+                <!-- Reemplazarás XXXXXXXXX con tu número cuando lo tengamos -->
+                <a href="https://wa.me/569XXXXXXXX?text=Hola%20Paola,%20quisiera%20solicitar%20informaci%C3%B3n" target="_blank" class="btn btn-wsp">💬 WhatsApp Directo</a>
+                <a href="mailto:contacto.demianconsultoria@gmail.com" class="btn btn-outline">✉️ Contactar por Email</a>
+            </div>
         </div>
 
-        <!-- Encabezado -->
-        <h1>Paola Arriagada Cifuentes</h1>
-        <p class="subtitle">Perito Judicial en Enfermería<br>Especialista en Enfermería Legal</p>
+        <!-- Quién Soy -->
+        <section id="quien-soy">
+            <h2>Quién Soy</h2>
+            <p>Aquí escribiremos tu presentación profesional, destacando tu trayectoria como Perito Judicial en Enfermería y especialista en enfermería legal.</p>
+        </section>
 
-        <!-- Botones de Acción (Tu nuevo centro de enlaces) -->
-        <div class="links-container">
+        <!-- Misión, Visión y Filosofía -->
+        <section id="nosotros">
+            <h2>Misión, Visión y Filosofía</h2>
+            <div class="grid-services">
+                <div class="card">
+                    <h3>🎯 Misión</h3>
+                    <p>Espacio para tu texto de misión...</p>
+                </div>
+                <div class="card">
+                    <h3>👁️ Visión</h3>
+                    <p>Espacio para tu texto de visión...</p>
+                </div>
+                <div class="card">
+                    <h3>💡 Filosofía</h3>
+                    <p>Espacio para tu filosofía de trabajo...</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cartera de Prestaciones -->
+        <section id="prestaciones">
+            <h2>Cartera de Prestaciones</h2>
+            <div class="grid-services">
+                <div class="card">
+                    <h3>⚖️ Peritaje Judicial en Enfermería</h3>
+                    <p>Investigación e informes periciales objetivo-técnicos para procesos penales, civiles y administrativos.</p>
+                </div>
+                <div class="card">
+                    <h3>📋 Auditoría y Análisis de Registros</h3>
+                    <p>Evaluación de fichas clínicas y sistemas de atención de urgencias (DAU), verificando precisión y extemporaneidad.</p>
+                </div>
+                <div class="card">
+                    <h3>🤝 Asesoría a Defensas y Abogados</h3>
+                    <p>Análisis de praxis clínica y fundamentación técnico-sanitaria para estrategias legales.</p>
+                </div>
+                <div class="card">
+                    <h3>🏥 Capacitación y Gestión de Riesgo</h3>
+                    <p>Talleres sobre responsabilidad legal e implicancias ético-sanitarias para equipos de enfermería.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cursos y Talleres (Flow) -->
+        <section id="cursos">
+            <h2>Cursos, Clases y Talleres</h2>
+            <p style="margin-bottom: 20px;">Capacitaciones continuas con inscripciones abiertas.</p>
             
-            <!-- WhatsApp (Reemplaza con tu número de teléfono de 9 dígitos después del 569) -->
-            <a href="https://wa.me/569XXXXXXXX?text=Hola,%20quisiera%20consultar%20sobre%20tus%20servicios" class="btn-link highlight" target="_blank">
-                💬 Contactar por WhatsApp
-            </a>
+            <div class="card">
+                <h3>🎓 Próximo Taller</h3>
+                <p>Próximamente información y fechas de inscripción.</p>
+                <br>
+                <a href="#" class="btn btn-wsp" style="width: 100%; text-align: center; justify-content: center;">💳 Inscribirme (Vía Flow)</a>
+            </div>
+        </section>
 
-            <!-- Correo -->
-            <a href="mailto:demianconsultoria@gmail.com" class="btn-link">
-                ✉️ Enviar un Correo
-            </a>
+        <!-- Contacto Directo -->
+        <section id="contacto">
+            <h2>Contacto Directo</h2>
+            <p>Para consultas técnicas, solicitudes de peritajes o asesorías:</p>
+            <br>
+            <div class="social-buttons" style="justify-content: flex-start;">
+                <a href="mailto:contacto.demianconsultoria@gmail.com" class="btn btn-outline">✉️ contacto.demianconsultoria@gmail.com</a>
+            </div>
+        </section>
 
-            <!-- Clases / Talleres (Aquí conectaremos Flow) -->
-            <a href="#" class="btn-link">
-                📚 Cursos, Clases y Talleres
-            </a>
-
-            <!-- Encuestas / Formularios -->
-            <a href="#" class="btn-link">
-                📋 Encuestas y Formularios
-            </a>
-
-        </div>
-
-        <footer>
-            © 2026 Demian Consultoría — www.demianconsultoria.cl
-        </footer>
     </div>
+
+    <footer>
+        © 2026 Demian Consultoría — Paola Arriagada Cifuentes | www.demianconsultoria.cl
+    </footer>
 
 </body>
 </html>
