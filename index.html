@@ -3,229 +3,161 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Enfermería Legal & Gestión del Riesgo</title>
+    <title>Demian Consultoría | Enfermería Legal y Peritaje Judicial</title>
+    <!-- Fuentes y estilos -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #0e3a5a;
-            --secondary: #1d70a2;
-            --accent: #00a896;
-            --light: #f4f7f6;
-            --dark: #2c3e50;
+            --azul-marino: #1E3A8A;
+            --lila-principal: #8B5CF6;
+            --lila-hover: #7C3AED;
+            --fondo-gris: #F8FAFC;
+            --texto-oscuro: #1E293B;
         }
-        
+
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Montserrat', sans-serif;
         }
 
         body {
-            line-height: 1.6;
-            color: var(--dark);
-            background-color: var(--light);
-        }
-
-        header {
-            background-color: #ffffff;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        nav {
+            background-color: var(--fondo-gris);
+            color: var(--texto-oscuro);
             display: flex;
-            justify-content: space-between;
+            flex-direction: column;
             align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 1rem 2rem;
+            min-height: 100vh;
+            padding: 20px;
         }
 
-        .logo {
-            font-weight: bold;
-            font-size: 1.4rem;
-            color: var(--primary);
+        .container {
+            max-width: 600px;
+            width: 100%;
+            text-align: center;
+            padding: 20px;
         }
 
-        .nav-links {
+        /* Logo */
+        .logo-container {
+            margin-bottom: 25px;
+        }
+
+        .logo-container img {
+            max-width: 280px;
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(30, 58, 138, 0.1);
+        }
+
+        /* Títulos */
+        h1 {
+            color: var(--azul-marino);
+            font-size: 1.5rem;
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+
+        p.subtitle {
+            color: #475569;
+            font-size: 0.95rem;
+            margin-bottom: 30px;
+            line-height: 1.4;
+        }
+
+        /* Sección de enlaces / Botones */
+        .links-container {
             display: flex;
-            list-style: none;
-            gap: 1.5rem;
+            flex-direction: column;
+            gap: 16px;
+            width: 100%;
         }
 
-        .nav-links a {
-            text-decoration: none;
-            color: var(--dark);
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: var(--secondary);
-        }
-
-        .hero {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: white;
-            padding: 5rem 2rem;
-            text-align: center;
-        }
-
-        .hero h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            max-width: 800px;
-            margin: 0 auto 2rem;
-        }
-
-        .btn {
-            display: inline-block;
-            background-color: var(--accent);
-            color: white;
-            padding: 0.8rem 1.8rem;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: background 0.3s;
-        }
-
-        .btn:hover {
-            background-color: #008f80;
-        }
-
-        .section {
-            padding: 4rem 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 2rem;
-            color: var(--primary);
-            margin-bottom: 2.5rem;
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .card {
-            background: white;
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            border-top: 4px solid var(--secondary);
-        }
-
-        .card h3 {
-            color: var(--primary);
-            margin-bottom: 1rem;
-        }
-
-        footer {
-            background-color: var(--primary);
-            color: white;
-            text-align: center;
-            padding: 2rem;
-            margin-top: 3rem;
-        }
-
-        .social-links {
-            margin-top: 1rem;
+        .btn-link {
             display: flex;
+            align-items: center;
             justify-content: center;
-            gap: 1.5rem;
+            padding: 16px 20px;
+            background-color: #ffffff;
+            color: var(--azul-marino);
+            border: 2px solid var(--azul-marino);
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
         }
 
-        .social-links a {
-            color: white;
-            text-decoration: none;
+        .btn-link:hover {
+            background-color: var(--azul-marino);
+            color: #ffffff;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(30, 58, 138, 0.2);
+        }
+
+        /* Botón destacado WhatsApp */
+        .btn-link.highlight {
+            background-color: var(--lila-principal);
+            color: #ffffff;
+            border: none;
+        }
+
+        .btn-link.highlight:hover {
+            background-color: var(--lila-hover);
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 40px;
+            font-size: 0.8rem;
+            color: #94A3B8;
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <nav>
-            <div class="logo">Enfermería Legal</div>
-            <ul class="nav-links">
-                <li><a href="#modelo">Modelo Demian</a></li>
-                <li><a href="#peritajes">Peritajes</a></li>
-                <li><a href="#cursos">Cursos</a></li>
-                <li><a href="#contacto">Contacto</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <section class="hero">
-        <h1>Gestión del Riesgo Legal en Enfermería</h1>
-        <p>Soluciones preventivas, peritajes judiciales y formación especializada para la práctica segura de la profesión.</p>
-        <a href="#cursos" class="btn">Ver Cursos Activos</a>
-    </section>
-
-    <section id="modelo" class="section">
-        <h2 class="section-title">El Modelo Demian</h2>
-        <div class="grid">
-            <div class="card">
-                <h3>Prevención de Riesgos Legales</h3>
-                <p>Enfoque integral diseñado para proteger la praxis profesional de enfermería mediante la gestión rigurosa de registros, cumplimiento normativo y reducción del riesgo asistencial.</p>
-            </div>
-            <div class="card">
-                <h3>Aplicación Práctica</h3>
-                <p>Herramientas concretas para la toma de decisiones informadas y respaldo documental ante eventuales reclamos o procesos sanitarios.</p>
-            </div>
+    <div class="container">
+        <!-- Logo -->
+        <div class="logo-container">
+            <img src="logo.png" alt="Paola Arriagada Cifuentes - Perito Judicial en Enfermería">
         </div>
-    </section>
 
-    <section id="peritajes" class="section" style="background-color: #eef2f5;">
-        <h2 class="section-title">Peritajes & Asesoría Forense</h2>
-        <div class="grid">
-            <div class="card">
-                <h3>Peritajes Judiciales y de Parte</h3>
-                <p>Elaboración de informes periciales fundados e imparciales en materia de responsabilidad profesional de enfermería para procesos judiciales.</p>
-            </div>
-            <div class="card">
-                <h3>Estudios de Factibilidad</h3>
-                <p>Análisis técnico-legal de fichas clínicas e historiales para evaluar la viabilidad de acciones legales o defensas.</p>
-            </div>
-        </div>
-    </section>
+        <!-- Encabezado -->
+        <h1>Paola Arriagada Cifuentes</h1>
+        <p class="subtitle">Perito Judicial en Enfermería<br>Especialista en Enfermería Legal</p>
 
-    <section id="cursos" class="section">
-        <h2 class="section-title">Formación & Cursos</h2>
-        <div class="grid">
-            <div class="card">
-                <h3>Curso de Gestión del Riesgo Legal</h3>
-                <p>Capacitación disponible en nuestra aula virtual de Google Classroom. Aprende a proteger tu ejercicio profesional.</p>
-                <br>
-                <a href="#" class="btn" style="padding: 0.5rem 1rem; font-size: 0.9rem;">Acceder a Classroom</a>
-            </div>
-            <div class="card">
-                <h3>Contenido Educativo en YouTube</h3>
-                <p>Revisa nuestras clases, análisis de casos y cápsulas explicativas gratuitas en nuestro canal oficial.</p>
-                <br>
-                <a href="#" class="btn" style="padding: 0.5rem 1rem; font-size: 0.9rem; background-color: #cc181e;">Ver Canal de YouTube</a>
-            </div>
-        </div>
-    </section>
+        <!-- Botones de Acción (Tu nuevo centro de enlaces) -->
+        <div class="links-container">
+            
+            <!-- WhatsApp (Reemplaza con tu número de teléfono de 9 dígitos después del 569) -->
+            <a href="https://wa.me/569XXXXXXXX?text=Hola,%20quisiera%20consultar%20sobre%20tus%20servicios" class="btn-link highlight" target="_blank">
+                💬 Contactar por WhatsApp
+            </a>
 
-    <footer id="contacto">
-        <p>&copy; 2026 Enfermería Legal - Gestión del Riesgo</p>
-        <div class="social-links">
-            <a href="#">LinkedIn</a>
-            <a href="#">YouTube</a>
-            <a href="#">Instagram</a>
+            <!-- Correo -->
+            <a href="mailto:demianconsultoria@gmail.com" class="btn-link">
+                ✉️ Enviar un Correo
+            </a>
+
+            <!-- Clases / Talleres (Aquí conectaremos Flow) -->
+            <a href="#" class="btn-link">
+                📚 Cursos, Clases y Talleres
+            </a>
+
+            <!-- Encuestas / Formularios -->
+            <a href="#" class="btn-link">
+                📋 Encuestas y Formularios
+            </a>
+
         </div>
-    </footer>
+
+        <footer>
+            © 2026 Demian Consultoría — www.demianconsultoria.cl
+        </footer>
+    </div>
 
 </body>
 </html>
