@@ -91,7 +91,7 @@
             padding: 40px 20px;
         }
 
-        /* HERO CON FOTO PROFESIONAL */
+        /* HERO LIMPIO CON FOTO */
         .hero {
             background: var(--blanco);
             padding: 45px;
@@ -229,7 +229,7 @@
             margin-bottom: 20px;
         }
 
-        /* CARD CONOCER MÁS (OPCIÓN 1) */
+        /* CARD CONOCER MÁS DE MÍ */
         .card-conocer-mas {
             background: linear-gradient(135deg, #F8FAFC 0%, #EFF6FF 100%);
             border: 1px solid #DBEAFE;
@@ -553,7 +553,7 @@
 
     <div class="container">
 
-        <!-- Portada Corporativa con Foto Profesional -->
+        <!-- Portada Corporativa Limpia (solo WhatsApp y Email de acceso directo) -->
         <div class="hero">
             <div class="hero-text">
                 <h1>Paola Andrea Arriagada Cifuentes</h1>
@@ -566,8 +566,6 @@
                         WhatsApp
                     </a>
                     <a href="mailto:contacto.demianconsultoria@gmail.com" class="btn btn-outline">✉️ Email</a>
-                    <a href="https://www.linkedin.com/in/paola-arriagada-cifuentes-" target="_blank" class="btn btn-outline">💼 LinkedIn</a>
-                    <a href="https://www.youtube.com/@riesgolegalenfermeria" target="_blank" class="btn btn-outline">▶️ YouTube</a>
                 </div>
             </div>
 
@@ -589,7 +587,7 @@
                 "Mi meta es instalar una barrera preventiva activa en la operación asistencial diaria. Mi labor consiste en capacitar a los equipos, realizar peritajes técnicos rigurosos, auditar los registros de enfermería y mitigar proactivamente los riesgos que impactan en la seguridad del paciente y en el patrimonio de la institución."
             </div>
 
-            <!-- BLOQUE ¿QUIERES CONOCER MÁS DE MÍ? (OPCIÓN 1) -->
+            <!-- ÚNICO LUGAR DESTACADO PARA LINKEDIN Y YOUTUBE -->
             <div class="card-conocer-mas">
                 <h3>🔍 ¿Quieres conocer más sobre mi trayectoria y propuesta?</h3>
                 <p>Te invito a explorar mi perfil profesional en <strong>LinkedIn</strong> para ver mi recorrido y red de contactos, o visitar mi canal de <strong>YouTube</strong>, donde comparto análisis, reflexiones y contenido práctico sobre la gestión del riesgo legal en enfermería.</p>
@@ -623,7 +621,7 @@
             </div>
         </section>
 
-        <!-- CARTERA DE PRESTACIONES DESPLEGABLE (NUEVO ORDEN JERÁRQUICO) -->
+        <!-- CARTERA DE PRESTACIONES DESPLEGABLE -->
         <section id="prestaciones">
             <h2>Estructura de Servicios — Maletín de Prestaciones</h2>
             <p style="color: #64748B; font-size: 0.9rem; margin-bottom: 15px;">Haz clic en cada línea de servicio para desplegar el detalle:</p>
@@ -823,7 +821,7 @@
             </div>
         </section>
 
-        <!-- SECCIÓN DE RESEÑAS Y TESTIMONIOS -->
+        <!-- SECCIÓN DE RESEÑAS CON FORMULARIO INTEGRADO EN PANTALLA -->
         <section id="testimonios">
             <h2>Reseñas & Comentarios de Alumnas y Clientes</h2>
             <p>La experiencia y satisfacción de quienes se han capacitado y asesorado con nosotros:</p>
@@ -844,18 +842,57 @@
                 </div>
             </div>
 
-            <!-- BOTÓN PARA DEJAR RESEÑA -->
-            <div style="text-align: center; margin-top: 25px;">
-                <a href="https://wa.me/56991410605?text=Hola%20Paola,%20me%20gustaria%20dejar%20mi%20comentario%20o%20rese%C3%B1a%20sobre%20tus%20cursos/capacitaciones" target="_blank" class="btn btn-outline">
-                    ✍️ ¿Has realizado un curso o asesoría? Déjanos tu opinión aquí
-                </a>
+            <!-- FORMULARIO DIRECTO EN PANTALLA -->
+            <div style="text-align: center; margin-top: 30px;">
+                <details style="border: none; box-shadow: none;">
+                    <summary class="btn btn-purple" style="display: inline-flex; width: auto; font-size: 0.9rem;">
+                        ✍️ Déjanos tu opinión o reseña aquí
+                    </summary>
+                    
+                    <div style="background: #F8FAFC; border: 1px solid #E2E8F0; padding: 25px; border-radius: 12px; margin-top: 20px; text-align: left; max-width: 600px; margin-left: auto; margin-right: auto;">
+                        <h3 style="color: var(--azul-marino); font-size: 1.1rem; margin-bottom: 10px;">Escribe tu experiencia</h3>
+                        <p style="font-size: 0.85rem; color: #64748B; margin-bottom: 15px;">Tu comentario será enviado directamente a nuestro equipo para ser integrado en el sitio web.</p>
+                        
+                        <form class="form-cotizacion" action="https://formspree.io/f/mlgqablz" method="POST" style="grid-template-columns: 1fr;">
+                            <input type="hidden" name="_subject" value="Nueva Reseña recibida en la Web">
+                            
+                            <div class="form-group">
+                                <label for="nombre_resena">Nombre o Iniciales</label>
+                                <input type="text" id="nombre_resena" name="nombre" placeholder="Ej: Lic. María González" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="cargo_resena">Cargo e Institución (Opcional)</label>
+                                <input type="text" id="cargo_resena" name="cargo" placeholder="Ej: Enfermera de Urgencias / CESFAM Concepción">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="valoracion">Calificación</label>
+                                <select id="valoracion" name="valoracion" required>
+                                    <option value="5 Estrellas (Excelente)">⭐⭐⭐⭐⭐ Excelente (5/5)</option>
+                                    <option value="4 Estrellas (Muy Bueno)">⭐⭐⭐⭐ Muy Bueno (4/5)</option>
+                                    <option value="3 Estrellas (Bueno)">⭐⭐⭐ Bueno (3/5)</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="comentario_resena">Tu Comentario o Reseña</label>
+                                <textarea id="comentario_resena" name="comentario" rows="4" placeholder="Cuéntanos qué te pareció el curso, taller o asesoría recibida..." required></textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-purple" style="font-size: 0.9rem;">Enviar Reseña</button>
+                            </div>
+                        </form>
+                    </div>
+                </details>
             </div>
         </section>
 
-        <!-- Contacto Directo -->
+        <!-- Contacto Directo Limpio -->
         <section id="contacto">
             <h2>Contacto Directo</h2>
-            <p>¿Tienes dudas específicas? Comunícate por cualquiera de nuestros canales oficiales:</p>
+            <p>¿Tienes dudas específicas o deseas comunicarte directamente?</p>
             <br>
             <div class="social-buttons" style="justify-content: flex-start;">
                 <a href="https://wa.me/56991410605?text=Hola%20Paola,%20quisiera%20solicitar%20informaci%C3%B3n%20sobre%20Demian%20Consultor%C3%ADa" target="_blank" class="btn btn-wsp">
@@ -863,8 +900,6 @@
                     WhatsApp (+56 9 91410605)
                 </a>
                 <a href="mailto:contacto.demianconsultoria@gmail.com" class="btn btn-outline">✉️ contacto.demianconsultoria@gmail.com</a>
-                <a href="https://www.linkedin.com/in/paola-arriagada-cifuentes-" target="_blank" class="btn btn-outline">💼 LinkedIn</a>
-                <a href="https://www.youtube.com/@riesgolegalenfermeria" target="_blank" class="btn btn-outline">▶️ YouTube</a>
             </div>
         </section>
 
