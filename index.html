@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Demian Consultoría | Paola Arriagada Cifuentes</title>
+    <title>Demian Consultoría | Gestión del Riesgo Legal en Enfermería</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -98,7 +98,18 @@
         h1 {
             color: var(--azul-marino);
             font-size: 1.8rem;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
+        }
+
+        .badge-main {
+            display: inline-block;
+            background-color: #EDE9FE;
+            color: var(--lila-principal);
+            font-weight: 700;
+            font-size: 1rem;
+            padding: 6px 16px;
+            border-radius: 20px;
+            margin-bottom: 15px;
         }
 
         .subtitle {
@@ -128,12 +139,12 @@
         }
 
         .btn-wsp {
-            background-color: var(--lila-principal);
+            background-color: #25D366;
             color: var(--blanco);
         }
 
         .btn-wsp:hover {
-            background-color: var(--lila-hover);
+            background-color: #1EBE5D;
             transform: translateY(-2px);
         }
 
@@ -199,46 +210,77 @@
             color: #475569;
         }
 
-        .grid-services {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 20px;
+        /* --- ESTILOS DEL ACORDEÓN / DESPLEGABLES --- */
+        .accordion {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
             margin-top: 20px;
         }
 
-        .service-card {
+        details {
             border: 1px solid #E2E8F0;
-            padding: 25px;
             border-radius: 12px;
-            transition: transform 0.3s, border-color 0.3s;
+            background: #FFFFFF;
+            overflow: hidden;
+            transition: all 0.3s ease;
         }
 
-        .service-card:hover {
+        details[open] {
             border-color: var(--lila-principal);
+            box-shadow: 0 4px 12px rgba(139, 92, 246, 0.1);
         }
 
-        .service-card h3 {
+        summary {
+            padding: 20px;
+            font-weight: 700;
+            font-size: 1.05rem;
             color: var(--azul-marino);
-            font-size: 1.15rem;
-            margin-bottom: 8px;
+            cursor: pointer;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
         }
 
-        .service-card .tagline {
+        summary::-webkit-details-marker {
+            display: none;
+        }
+
+        summary::after {
+            content: '➕';
+            font-size: 0.9rem;
+            color: var(--lila-principal);
+            transition: transform 0.3s ease;
+        }
+
+        details[open] summary::after {
+            content: '➖';
+        }
+
+        .accordion-content {
+            padding: 0 20px 20px 20px;
+            border-top: 1px solid #F1F5F9;
+        }
+
+        .accordion-content .tagline {
             font-size: 0.85rem;
             color: var(--lila-principal);
             font-weight: 600;
-            margin-bottom: 15px;
+            margin: 15px 0;
             display: block;
+            font-style: italic;
         }
 
-        .service-card ul {
+        .accordion-content ul {
             list-style-type: disc;
             padding-left: 20px;
             font-size: 0.9rem;
             color: #334155;
         }
 
-        .service-card ul li {
+        .accordion-content ul li {
             margin-bottom: 8px;
         }
 
@@ -275,10 +317,14 @@
         <div class="hero">
             <img src="logo.png.png" alt="Demian Consultoría Logo" class="logo-img">
             <h1>Paola Andrea Arriagada Cifuentes</h1>
+            <div class="badge-main">Gestión del Riesgo Legal en Enfermería</div>
             <p class="subtitle">Enfermera Universitaria | Especialista en Enfermería Legal<br>Perito Judicial de la Ilustre Corte de Apelaciones de Concepción (Bienio 2026/2027)</p>
 
             <div class="social-buttons">
-                <a href="https://wa.me/56991410605?text=Hola%20Paola,%20quisiera%20solicitar%20informaci%C3%B3n%20sobre%20Demian%20Consultor%C3%ADa" target="_blank" class="btn btn-wsp">💬 WhatsApp (+56 9 91410605)</a>
+                <a href="https://wa.me/56991410605?text=Hola%20Paola,%20quisiera%20solicitar%20informaci%C3%B3n%20sobre%20Demian%20Consultor%C3%ADa" target="_blank" class="btn btn-wsp">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+                    WhatsApp (+56 9 91410605)
+                </a>
                 <a href="mailto:contacto.demianconsultoria@gmail.com" class="btn btn-outline">✉️ Email</a>
                 <a href="https://www.linkedin.com/in/paola-arriagada-cifuentes-" target="_blank" class="btn btn-outline">💼 LinkedIn</a>
                 <a href="https://www.youtube.com/@riesgolegalenfermeria" target="_blank" class="btn btn-outline">▶️ YouTube</a>
@@ -323,60 +369,72 @@
             </div>
         </section>
 
-        <!-- ESTRUCTURA DE SERVICIOS -->
+        <!-- CARTERA DE PRESTACIONES DESPLEGABLE -->
         <section id="prestaciones">
             <h2>Estructura de Servicios — Maletín de Prestaciones</h2>
-            <div class="grid-services">
+            <p style="color: #64748B; font-size: 0.9rem; margin-bottom: 15px;">Haz clic en cada línea de servicio para desplegar el detalle:</p>
+
+            <div class="accordion">
                 
-                <div class="service-card">
-                    <h3>LÍNEA 1: Gestión de Reclamos y Experiencia de Usuario (NPS/OIRS)</h3>
-                    <span class="tagline">"El primer síntoma de un eventual conflicto legal es la insatisfacción expresada en los canales de atención al cliente."</span>
-                    <ul>
-                        <li><strong>Auditoría Clínica de Reclamos:</strong> Análisis técnico de quejas formales (OIRS / Atención al cliente) para identificar brechas en la Lex Artis.</li>
-                        <li><strong>Análisis de NPS e Indicadores:</strong> Cruce de datos de insatisfacción con áreas de riesgo legal, detectando vulnerabilidades.</li>
-                        <li><strong>Estrategia de Respuesta Técnica:</strong> Redacción de respuestas fundamentadas en evidencia clínica y normativa para la resolución temprana de conflictos.</li>
-                    </ul>
-                </div>
+                <details>
+                    <summary>LÍNEA 1: Gestión de Reclamos y Experiencia de Usuario (NPS/OIRS)</summary>
+                    <div class="accordion-content">
+                        <span class="tagline">"El primer síntoma de un eventual conflicto legal es la insatisfacción expresada en los canales de atención al cliente."</span>
+                        <ul>
+                            <li><strong>Auditoría Clínica de Reclamos:</strong> Análisis técnico de quejas formales (OIRS / Atención al cliente) para identificar brechas en la Lex Artis.</li>
+                            <li><strong>Análisis de NPS e Indicadores:</strong> Cruce de datos de insatisfacción con áreas de riesgo legal, detectando vulnerabilidades.</li>
+                            <li><strong>Estrategia de Respuesta Técnica:</strong> Redacción de respuestas fundamentadas en evidencia clínica y normativa para la resolución temprana de conflictos.</li>
+                        </ul>
+                    </div>
+                </details>
 
-                <div class="service-card">
-                    <h3>LÍNEA 2: Auditoría Clínica y Gestión del Riesgo Operativo</h3>
-                    <span class="tagline">"Evaluación y análisis de los procesos en el terreno donde ocurren los cuidados."</span>
-                    <ul>
-                        <li><strong>Auditoría de Registro de Enfermería y Ficha Clínica:</strong> Evaluación del cumplimiento normativo para asegurar la trazabilidad y veracidad documental.</li>
-                        <li><strong>Análisis de Causa Raíz (Incidentes y Eventos Adversos):</strong> Investigación de fallos priorizando "near misses" para corregir procesos antes del evento centinela.</li>
-                        <li><strong>Evaluación de Competencias Técnico-Legales:</strong> Auditoría de desempeño en terreno para procesos críticos (administración de medicamentos, contención física y privacidad).</li>
-                    </ul>
-                </div>
+                <details>
+                    <summary>LÍNEA 2: Auditoría Clínica y Gestión del Riesgo Operativo</summary>
+                    <div class="accordion-content">
+                        <span class="tagline">"Evaluación y análisis de los procesos en el terreno donde ocurren los cuidados."</span>
+                        <ul>
+                            <li><strong>Auditoría de Registro de Enfermería y Ficha Clínica:</strong> Evaluación del cumplimiento normativo para asegurar la trazabilidad y veracidad documental.</li>
+                            <li><strong>Análisis de Causa Raíz (Incidentes y Eventos Adversos):</strong> Investigación de fallos priorizando "near misses" para corregir procesos antes del evento centinela.</li>
+                            <li><strong>Evaluación de Competencias Técnico-Legales:</strong> Auditoría de desempeño en terreno para procesos críticos (administración de medicamentos, contención física y privacidad).</li>
+                        </ul>
+                    </div>
+                </details>
 
-                <div class="service-card">
-                    <h3>LÍNEA 3: Capacitación y Charlas Clínico-Legales</h3>
-                    <span class="tagline">"Educación práctica y con lenguaje sencillo para los equipos de salud."</span>
-                    <ul>
-                        <li><strong>Ley 20.584 (Derechos y Deberes):</strong> Talleres sobre Consentimiento Informado, Rechazo Terapéutico y Ficha Clínica (propiedad y confidencialidad).</li>
-                        <li><strong>Responsabilidad Civil y Administrativa:</strong> Alcance legal de firmas, delegación de funciones a TENS o internos, y prevención de sumarios.</li>
-                        <li><strong>Manejo Técnico-Legal en Servicios de Urgencia (SAR/SAPU/SAMU):</strong> Capacitación en Triage, registros bajo presión y resguardo de Lex Artis.</li>
-                    </ul>
-                </div>
+                <details>
+                    <summary>LÍNEA 3: Capacitación y Charlas Clínico-Legales</summary>
+                    <div class="accordion-content">
+                        <span class="tagline">"Educación práctica y con lenguaje sencillo para los equipos de salud."</span>
+                        <ul>
+                            <li><strong>Ley 20.584 (Derechos y Deberes):</strong> Talleres sobre Consentimiento Informado, Rechazo Terapéutico y Ficha Clínica (propiedad y confidencialidad).</li>
+                            <li><strong>Responsabilidad Civil y Administrativa:</strong> Alcance legal de firmas, delegación de funciones a TENS o internos, y prevención de sumarios.</li>
+                            <li><strong>Manejo Técnico-Legal en Servicios de Urgencia (SAR/SAPU/SAMU):</strong> Capacitación en Triage, registros bajo presión y resguardo de Lex Artis.</li>
+                        </ul>
+                    </div>
+                </details>
 
-                <div class="service-card">
-                    <h3>LÍNEA 4: Ámbito Forense, Pericial y Apoyo a Defensas</h3>
-                    <span class="tagline">"Traducción técnica de la evidencia asistencial para el mundo jurídico."</span>
-                    <ul>
-                        <li><strong>Informes de Viabilidad Clínico-Legal:</strong> Análisis técnico y reservado de fichas clínicas para evaluar acusaciones de mala praxis.</li>
-                        <li><strong>Peritajes Judiciales de Enfermería:</strong> Elaboración de informes periciales de parte y oficiales ante la Corte de Apelaciones.</li>
-                        <li><strong>Preparación Técnica de Testigos Expertos:</strong> Orientación a profesionales de salud para declarar en juicios o sumarios.</li>
-                    </ul>
-                </div>
+                <details>
+                    <summary>LÍNEA 4: Ámbito Forense, Pericial y Apoyo a Defensas</summary>
+                    <div class="accordion-content">
+                        <span class="tagline">"Traducción técnica de la evidencia asistencial para el mundo jurídico."</span>
+                        <ul>
+                            <li><strong>Informes de Viabilidad Clínico-Legal:</strong> Análisis técnico y reservado de fichas clínicas para evaluar acusaciones de mala praxis.</li>
+                            <li><strong>Peritajes Judiciales de Enfermería:</strong> Elaboración de informes periciales de parte y oficiales ante la Corte de Apelaciones.</li>
+                            <li><strong>Preparación Técnica de Testigos Expertos:</strong> Orientación a profesionales de salud para declarar en juicios o sumarios.</li>
+                        </ul>
+                    </div>
+                </details>
 
-                <div class="service-card">
-                    <h3>LÍNEA 5: Consultoría e Investigación de Ley Karin (Ley 21.643)</h3>
-                    <span class="tagline">"Cumplimiento normativo y fomento de entornos laborales saludables y libres de violencia."</span>
-                    <ul>
-                        <li><strong>Adecuación y Confección de Protocolos:</strong> Diseño del protocolo exigido por ley contra el acoso laboral, sexual y violencia.</li>
-                        <li><strong>Investigación Externa de Denuncias:</strong> Investigadora independiente certificada para garantizar debido proceso e informes válidos ante la Dirección del Trabajo.</li>
-                        <li><strong>Talleres de Sensibilización:</strong> Capacitación preventiva en maltrato y resolución de conflictos.</li>
-                    </ul>
-                </div>
+                <details>
+                    <summary>LÍNEA 5: Consultoría e Investigación de Ley Karin (Ley 21.643)</summary>
+                    <div class="accordion-content">
+                        <span class="tagline">"Cumplimiento normativo y fomento de entornos laborales saludables y libres de violencia."</span>
+                        <ul>
+                            <li><strong>Adecuación y Confección de Protocolos:</strong> Diseño del protocolo exigido por ley contra el acoso laboral, sexual y violencia.</li>
+                            <li><strong>Investigación Externa de Denuncias:</strong> Investigadora independiente certificada para garantizar debido proceso e informes válidos ante la Dirección del Trabajo.</li>
+                            <li><strong>Talleres de Sensibilización:</strong> Capacitación preventiva en maltrato y resolución de conflictos.</li>
+                        </ul>
+                    </div>
+                </details>
 
             </div>
         </section>
@@ -387,10 +445,13 @@
             <p>Para coordinar Charlas Magistrales, Auditorías Piloto de Fichas Clínicas o una Sesión de Diagnóstico:</p>
             <br>
             <div class="social-buttons" style="justify-content: flex-start;">
-                <a href="https://wa.me/56991410605" target="_blank" class="btn btn-wsp">💬 WhatsApp (+56 9 91410605)</a>
+                <a href="https://wa.me/56991410605?text=Hola%20Paola,%20quisiera%20solicitar%20informaci%C3%B3n%20sobre%20Demian%20Consultor%C3%ADa" target="_blank" class="btn btn-wsp">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+                    WhatsApp (+56 9 91410605)
+                </a>
                 <a href="mailto:contacto.demianconsultoria@gmail.com" class="btn btn-outline">✉️ contacto.demianconsultoria@gmail.com</a>
                 <a href="https://www.linkedin.com/in/paola-arriagada-cifuentes-" target="_blank" class="btn btn-outline">💼 LinkedIn</a>
-                <a href="https://www.youtube.com/@riesgolegalenfermeria" target="_blank" class="btn btn-outline">▶️ Canal de YouTube</a>
+                <a href="https://www.youtube.com/@riesgolegalenfermeria" target="_blank" class="btn btn-outline">▶️ YouTube</a>
             </div>
         </section>
 
