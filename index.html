@@ -13,6 +13,7 @@
             --fondo-gris: #F8FAFC;
             --texto-oscuro: #1E293B;
             --blanco: #FFFFFF;
+            --verde-agenda: #10B981;
         }
 
         * {
@@ -29,7 +30,6 @@
             line-height: 1.6;
         }
 
-        /* HEADER CORPORATIVO */
         header {
             background-color: var(--blanco);
             position: sticky;
@@ -69,7 +69,7 @@
 
         .nav-links {
             display: flex;
-            gap: 20px;
+            gap: 18px;
             list-style: none;
         }
 
@@ -77,7 +77,7 @@
             text-decoration: none;
             color: var(--texto-oscuro);
             font-weight: 600;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             transition: color 0.3s;
         }
 
@@ -91,7 +91,7 @@
             padding: 40px 20px;
         }
 
-        /* HERO EN 2 COLUMNAS */
+        /* HERO BASE */
         .hero {
             background: var(--blanco);
             padding: 45px;
@@ -104,9 +104,7 @@
             align-items: center;
         }
 
-        .hero-text {
-            text-align: left;
-        }
+        .hero-text { text-align: left; }
 
         h1 {
             color: var(--azul-marino);
@@ -142,6 +140,7 @@
         .btn {
             display: inline-flex;
             align-items: center;
+            justify-content: center;
             gap: 8px;
             padding: 10px 18px;
             border-radius: 8px;
@@ -149,6 +148,8 @@
             font-weight: 600;
             font-size: 0.85rem;
             transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
         }
 
         .btn-wsp {
@@ -172,6 +173,26 @@
             color: var(--blanco);
         }
 
+        .btn-purple {
+            background-color: var(--lila-principal);
+            color: var(--blanco);
+        }
+
+        .btn-purple:hover {
+            background-color: var(--lila-hover);
+            transform: translateY(-2px);
+        }
+
+        .btn-green {
+            background-color: var(--verde-agenda);
+            color: var(--blanco);
+        }
+
+        .btn-green:hover {
+            background-color: #059669;
+            transform: translateY(-2px);
+        }
+
         .hero-card {
             background: var(--fondo-gris);
             border: 1px solid #E2E8F0;
@@ -192,7 +213,6 @@
             line-height: 1.5;
         }
 
-        /* SECCIONES */
         section {
             background: var(--blanco);
             padding: 35px;
@@ -244,7 +264,7 @@
             color: #475569;
         }
 
-        /* ACORDEÓN DESPLEGABLE */
+        /* ACORDEÓN BASE */
         .accordion {
             display: flex;
             flex-direction: column;
@@ -278,20 +298,15 @@
             user-select: none;
         }
 
-        summary::-webkit-details-marker {
-            display: none;
-        }
+        summary::-webkit-details-marker { display: none; }
 
         summary::after {
             content: '➕';
             font-size: 0.85rem;
             color: var(--lila-principal);
-            transition: transform 0.3s ease;
         }
 
-        details[open] summary::after {
-            content: '➖';
-        }
+        details[open] summary::after { content: '➖'; }
 
         .accordion-content {
             padding: 0 20px 20px 20px;
@@ -314,8 +329,143 @@
             color: #334155;
         }
 
-        .accordion-content ul li {
+        .accordion-content ul li { margin-bottom: 8px; }
+
+        /* --- NUEVOS ESTILOS: AGENDAMIENTO, FORMULARIO Y CURSOS --- */
+        
+        .grid-agendamiento {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .card-agenda {
+            background: #FFFFFF;
+            border: 2px solid #E2E8F0;
+            border-radius: 14px;
+            padding: 25px;
+            text-align: center;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .card-agenda:hover {
+            transform: translateY(-4px);
+        }
+
+        .card-agenda.free {
+            border-color: var(--verde-agenda);
+        }
+
+        .card-agenda.pro {
+            border-color: var(--lila-principal);
+        }
+
+        .card-agenda h3 {
+            font-size: 1.2rem;
+            color: var(--azul-marino);
+            margin-bottom: 10px;
+        }
+
+        .price-badge {
+            display: inline-block;
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin: 10px 0 15px 0;
+            padding: 4px 12px;
+            border-radius: 8px;
+        }
+
+        .free .price-badge { background: #E6F4EA; color: #137333; }
+        .pro .price-badge { background: #EDE9FE; color: var(--lila-principal); }
+
+        .card-agenda p {
+            font-size: 0.85rem;
+            color: #64748B;
+            margin-bottom: 20px;
+            min-height: 40px;
+        }
+
+        /* FORMULARIO DE COTIZACIÓN */
+        .form-cotizacion {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .form-group.full { grid-column: 1 / -1; }
+
+        .form-group label {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--azul-marino);
+        }
+
+        .form-group input, 
+        .form-group select, 
+        .form-group textarea {
+            padding: 12px;
+            border: 1px solid #CBD5E1;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus, 
+        .form-group select:focus, 
+        .form-group textarea:focus {
+            border-color: var(--lila-principal);
+        }
+
+        /* CURSOS ONLINE */
+        .grid-cursos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .card-curso {
+            background: #F8FAFC;
+            border: 1px solid #E2E8F0;
+            border-radius: 12px;
+            padding: 22px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card-curso-tag {
+            align-self: flex-start;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            padding: 4px 10px;
+            border-radius: 6px;
+            margin-bottom: 12px;
+        }
+
+        .tag-active { background: #D1FAE5; color: #065F46; }
+        .tag-next { background: #FEF3C7; color: #92400E; }
+
+        .card-curso h3 {
+            font-size: 1.05rem;
+            color: var(--azul-marino);
             margin-bottom: 8px;
+        }
+
+        .card-curso p {
+            font-size: 0.85rem;
+            color: #475569;
+            margin-bottom: 15px;
         }
 
         footer {
@@ -332,6 +482,7 @@
             }
             .nav-links { display: none; }
             section { padding: 25px 18px; }
+            .form-cotizacion { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -347,14 +498,16 @@
                 <li><a href="#quien-soy">Quién Soy</a></li>
                 <li><a href="#diferenciacion">Diferenciación</a></li>
                 <li><a href="#prestaciones">Prestaciones</a></li>
-                <li><a href="#contacto">Contacto</a></li>
+                <li><a href="#agenda">Agendar Cita</a></li>
+                <li><a href="#cotizaciones">Cotizar Charlas</a></li>
+                <li><a href="#cursos">Cursos Online</a></li>
             </ul>
         </nav>
     </header>
 
     <div class="container">
 
-        <!-- Portada Corporativa en 2 Columnas -->
+        <!-- Portada Corporativa -->
         <div class="hero">
             <div class="hero-text">
                 <h1>Paola Andrea Arriagada Cifuentes</h1>
@@ -422,7 +575,6 @@
             <p style="color: #64748B; font-size: 0.9rem; margin-bottom: 15px;">Haz clic en cada línea de servicio para desplegar el detalle:</p>
 
             <div class="accordion">
-                
                 <details>
                     <summary>LÍNEA 1: Gestión de Reclamos y Experiencia de Usuario (NPS/OIRS)</summary>
                     <div class="accordion-content">
@@ -482,14 +634,107 @@
                         </ul>
                     </div>
                 </details>
+            </div>
+        </section>
 
+        <!-- SECCIÓN 1: AGENDAMIENTO DE CITAS -->
+        <section id="agenda">
+            <h2>Reserva de Asesoría & Diagnóstico</h2>
+            <p>Selecciona la modalidad que mejor se adapte a tu necesidad actual:</p>
+
+            <div class="grid-agendamiento">
+                <div class="card-agenda free">
+                    <h3>Consulta Breve de Diagnóstico</h3>
+                    <span class="price-badge">GRATIS (15 min)</span>
+                    <p>Orientación inicial rápida para evaluar la factibilidad de tu caso o definir necesidades institucionales.</p>
+                    <a href="https://wa.me/56991410605?text=Hola%20Paola,%20quisiera%20agendar%20la%20asesoria%20gratuita%20de%2015%20minutos" target="_blank" class="btn btn-green">Agendar Sesión Gratis</a>
+                </div>
+
+                <div class="card-agenda pro">
+                    <h3>Asesoría Clínica-Legal Especializada</h3>
+                    <span class="price-badge">Sesión Completa (60 min)</span>
+                    <p>Análisis exhaustivo de casos, revisión previa de antecedentes y propuesta estratégica de mitigación de riesgo.</p>
+                    <a href="https://wa.me/56991410605?text=Hola%20Paola,%20quisiera%20solicitar%20informacion%20y%20valores%20para%20una%20asesoria%20especializada" target="_blank" class="btn btn-purple">Solicitar Agendamiento</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 2: COTIZACIÓN DE CURSOS Y CHARLAS -->
+        <section id="cotizaciones">
+            <h2>Cotización para Instituciones, Gremios y Empresas</h2>
+            <p>Diseño de ponencias, jornadas y talleres a la medida para CESFAM, Clínicas, Hospitales, Sindicatos y Universidades.</p>
+
+            <form class="form-cotizacion" action="https://formspree.io/f/contacto.demianconsultoria@gmail.com" method="POST">
+                <div class="form-group">
+                    <label for="nombre">Nombre del Contacto / Cargo</label>
+                    <input type="text" id="nombre" name="nombre" placeholder="Ej: Dra. María González - Directora CESFAM" required>
+                </div>
+                <div class="form-group">
+                    <label for="organizacion">Institución u Organización</label>
+                    <input type="text" id="organizacion" name="organizacion" placeholder="Ej: CESFAM Concepción / Sindicato Nº 1" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Correo Electrónico</label>
+                    <input type="email" id="email" name="email" placeholder="correo@institucion.cl" required>
+                </div>
+                <div class="form-group">
+                    <label for="telefono">Teléfono de Contacto</label>
+                    <input type="tel" id="telefono" name="telefono" placeholder="+56 9 1234 5678" required>
+                </div>
+                <div class="form-group">
+                    <label for="tipo_servicio">Servicio Requerido</label>
+                    <select id="tipo_servicio" name="tipo_servicio" required>
+                        <option value="">Selecciona una opción...</option>
+                        <option value="Charla / Ponencia">Charla / Ponencia Magistral</option>
+                        <option value="Taller Practico">Taller Práctico para Equipos de Salud</option>
+                        <option value="Capacitacion Ley Karin">Capacitación Ley Karin (Ley 21.643)</option>
+                        <option value="Auditoria / Consultoria">Auditoría Clínica Institucional</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="asistentes">Nº Estimado de Participantes / Modalidad</label>
+                    <input type="text" id="asistentes" name="asistentes" placeholder="Ej: 30 personas / Presencial u Online">
+                </div>
+                <div class="form-group full">
+                    <label for="mensaje">Detalles del Requerimiento</label>
+                    <textarea id="mensaje" name="mensaje" rows="4" placeholder="Describe brevemente el objetivo de la actividad o los temas que te gustaría abordar..."></textarea>
+                </div>
+                <div class="form-group full">
+                    <button type="submit" class="btn btn-purple" style="font-size: 1rem; padding: 12px 24px;">Enviar Solicitud de Cotización</button>
+                </div>
+            </form>
+        </section>
+
+        <!-- SECCIÓN 3: CURSOS ONLINE -->
+        <section id="cursos">
+            <h2>Academia & Cursos Online</h2>
+            <p>Capacitación continua a tu propio ritmo sobre aspectos legal-asistenciales críticos.</p>
+
+            <div class="grid-cursos">
+                <div class="card-curso">
+                    <div>
+                        <span class="card-curso-tag tag-active">Disponible Ahora</span>
+                        <h3>Gestión de Riesgo Legal en Registros de Enfermería</h3>
+                        <p>Aprende a confeccionar registros clínicos blindados, respetando la Ley de Derechos y Deberes y previniendo sanciones administrativas y demandas civiles.</p>
+                    </div>
+                    <a href="https://wa.me/56991410605?text=Hola%20Paola,%20quisiera%20mas%20informacion%20e%20inscripcion%20para%20el%20curso%20online" target="_blank" class="btn btn-outline" style="width: 100%; text-align: center;">Más Información / Inscribirme</a>
+                </div>
+
+                <div class="card-curso">
+                    <div>
+                        <span class="card-curso-tag tag-next">Próximamente</span>
+                        <h3>Investigación Práctica bajo la Ley Karin en Salud</h3>
+                        <p>Herramientas metodológicas para la aplicación del procedimiento de investigación de acoso laboral y sexual en contextos asistenciales.</p>
+                    </div>
+                    <button class="btn btn-outline" disabled style="opacity: 0.6; width: 100%;">Próximo Lanzamiento</button>
+                </div>
             </div>
         </section>
 
         <!-- Contacto Directo -->
         <section id="contacto">
-            <h2>Contacto Directo & Abordaje Inicial</h2>
-            <p>Para coordinar Charlas Magistrales, Auditorías Piloto de Fichas Clínicas o una Sesión de Diagnóstico:</p>
+            <h2>Contacto Directo</h2>
+            <p>¿Tienes dudas específicas? Comunícate por cualquiera de nuestros canales oficiales:</p>
             <br>
             <div class="social-buttons" style="justify-content: flex-start;">
                 <a href="https://wa.me/56991410605?text=Hola%20Paola,%20quisiera%20solicitar%20informaci%C3%B3n%20sobre%20Demian%20Consultor%C3%ADa" target="_blank" class="btn btn-wsp">
